@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlTag" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Services - Boostify</title>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto 20px auto;
+        }
+
+        .back-link a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .lang-switcher select {
+            background-color: #161b22;
+            color: #ffffff;
+            border: 1px solid #30363d;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .lang-switcher select:hover {
+            border-color: #f472b6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #f472b6;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+
+        .terms-box {
+            background-color: #161b22;
+            border: 1px solid #f472b6;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .terms-box h3 {
+            color: #f472b6;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .terms-box ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #c9d1d9;
+        }
+
+        body[dir="rtl"] .terms-box ul {
+            padding-left: 0;
+            padding-right: 20px;
+        }
+
+        .terms-box li {
+            margin-bottom: 10px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        h2.category-title {
+            text-align: center;
+            color: #38bdf8;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-bottom: 2px solid #38bdf8;
+            display: table;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 5px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+        }
+
+        @media (max-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #f472b6;
+        }
+
+        .service-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .service-price {
+            font-size: 16px;
+            color: #38bdf8;
+            margin-bottom: 20px;
+        }
+
+        .order-btn {
+            background: linear-gradient(135deg, #ec4899, #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 0;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .order-btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="back-link">
+            <a href="index.html" id="backText">← Back to Home</a>
+        </div>
+        <div class="lang-switcher">
+            <select id="langSelect" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </div>
+
+    <h1 id="mainTitle">TikTok Services</h1>
+
+    <!-- Terms & Conditions -->
+    <div class="terms-box">
+        <h3 id="termsTitle">⚠️ Important Terms & Conditions</h3>
+        <ul id="termsList">
+            <li>No refunds can be issued after followers/services are sent, as they cannot be removed.</li>
+            <li>Services take some time to be delivered, and larger quantities require more time.</li>
+            <li>Sometimes you may receive a slightly higher number than what you ordered.</li>
+            <li>You might experience a natural drop in some followers over time.</li>
+        </ul>
+    </div>
+
+    <!-- 1. TikTok Likes -->
+    <h2 class="category-title" id="catLikes">TikTok Likes</h2>
+    <div class="grid">
+        <div class="card"><div class="service-name">100 Likes</div><div class="service-price">3 DT</div><button class="order-btn" onclick="orderService('TikTok 100 Likes', '3 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">250 Likes</div><div class="service-price">8 DT</div><button class="order-btn" onclick="orderService('TikTok 250 Likes', '8 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">500 Likes</div><div class="service-price">15 DT</div><button class="order-btn" onclick="orderService('TikTok 500 Likes', '15 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">1000 Likes</div><div class="service-price">30 DT</div><button class="order-btn" onclick="orderService('TikTok 1000 Likes', '30 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">2500 Likes</div><div class="service-price">75 DT</div><button class="order-btn" onclick="orderService('TikTok 2500 Likes', '75 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">5000 Likes</div><div class="service-price">150 DT</div><button class="order-btn" onclick="orderService('TikTok 5000 Likes', '150 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">10000 Likes</div><div class="service-price">300 DT</div><button class="order-btn" onclick="orderService('TikTok 10000 Likes', '300 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">20000 Likes</div><div class="service-price">600 DT</div><button class="order-btn" onclick="orderService('TikTok 20000 Likes', '600 DT')">Order Now</button></div>
+    </div>
+
+    <!-- 2. TikTok Followers -->
+    <h2 class="category-title" id="catFollowers">TikTok Followers</h2>
+    <div class="grid">
+        <div class="card"><div class="service-name">100 Followers</div><div class="service-price">10 DT</div><button class="order-btn" onclick="orderService('TikTok 100 Followers', '10 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">250 Followers</div><div class="service-price">25 DT</div><button class="order-btn" onclick="orderService('TikTok 250 Followers', '25 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">500 Followers</div><div class="service-price">50 DT</div><button class="order-btn" onclick="orderService('TikTok 500 Followers', '50 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">1000 Followers</div><div class="service-price">100 DT</div><button class="order-btn" onclick="orderService('TikTok 1000 Followers', '100 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">2500 Followers</div><div class="service-price">250 DT</div><button class="order-btn" onclick="orderService('TikTok 2500 Followers', '250 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">5000 Followers</div><div class="service-price">500 DT</div><button class="order-btn" onclick="orderService('TikTok 5000 Followers', '500 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">10000 Followers</div><div class="service-price">1000 DT</div><button class="order-btn" onclick="orderService('TikTok 10000 Followers', '1000 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">20000 Followers</div><div class="service-price">2000 DT</div><button class="order-btn" onclick="orderService('TikTok 20000 Followers', '2000 DT')">Order Now</button></div>
+    </div>
+
+    <!-- 3. TikTok Video Views -->
+    <h2 class="category-title" id="catViews">TikTok Video Views</h2>
+    <div class="grid">
+        <div class="card"><div class="service-name">100 Views</div><div class="service-price">1 DT</div><button class="order-btn" onclick="orderService('TikTok 100 Views', '1 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">500 Views</div><div class="service-price">2 DT</div><button class="order-btn" onclick="orderService('TikTok 500 Views', '2 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">1000 Views</div><div class="service-price">3 DT</div><button class="order-btn" onclick="orderService('TikTok 1000 Views', '3 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">5000 Views</div><div class="service-price">15 DT</div><button class="order-btn" onclick="orderService('TikTok 5000 Views', '15 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">10000 Views</div><div class="service-price">30 DT</div><button class="order-btn" onclick="orderService('TikTok 10000 Views', '30 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">25000 Views</div><div class="service-price">75 DT</div><button class="order-btn" onclick="orderService('TikTok 25000 Views', '75 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">50000 Views</div><div class="service-price">150 DT</div><button class="order-btn" onclick="orderService('TikTok 50000 Views', '150 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">100000 Views</div><div class="service-price">300 DT</div><button class="order-btn" onclick="orderService('TikTok 100000 Views', '300 DT')">Order Now</button></div>
+    </div>
+
+    <!-- 4. TikTok Post Share -->
+    <h2 class="category-title" id="catShares">TikTok Post Share</h2>
+    <div class="grid">
+        <div class="card"><div class="service-name">100 Shares</div><div class="service-price">2 DT</div><button class="order-btn" onclick="orderService('TikTok 100 Shares', '2 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">200 Shares</div><div class="service-price">3 DT</div><button class="order-btn" onclick="orderService('TikTok 200 Shares', '3 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">500 Shares</div><div class="service-price">8 DT</div><button class="order-btn" onclick="orderService('TikTok 500 Shares', '8 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">1000 Shares</div><div class="service-price">15 DT</div><button class="order-btn" onclick="orderService('TikTok 1000 Shares', '15 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">2500 Shares</div><div class="service-price">38 DT</div><button class="order-btn" onclick="orderService('TikTok 2500 Shares', '38 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">5000 Shares</div><div class="service-price">75 DT</div><button class="order-btn" onclick="orderService('TikTok 5000 Shares', '75 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">10000 Shares</div><div class="service-price">150 DT</div><button class="order-btn" onclick="orderService('TikTok 10000 Shares', '150 DT')">Order Now</button></div>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                backText: "← Back to Home",
+                mainTitle: "TikTok Services",
+                termsTitle: "⚠️ Important Terms & Conditions",
+                termsList: [
+                    "No refunds can be issued after services/followers are sent, as they cannot be removed.",
+                    "Services take some time to be delivered, and larger quantities require more time.",
+                    "Sometimes you may receive a slightly higher number than what you ordered.",
+                    "You might experience a natural drop in some followers over time."
+                ],
+                catLikes: "TikTok Likes",
+                catFollowers: "TikTok Followers",
+                catViews: "TikTok Video Views",
+                catShares: "TikTok Post Share",
+                orderBtn: "Order Now"
+            },
+            fr: {
+                backText: "← Retour à l'accueil",
+                mainTitle: "Services TikTok",
+                termsTitle: "⚠️ Termes et Conditions Importants",
+                termsList: [
+                    "Aucun remboursement ne peut être effectué après l'envoi, car ils ne peuvent pas être retirés.",
+                    "Les services prennent un certain temps à être livrés, et les grandes quantités demandent plus de temps.",
+                    "Parfois, vous pouvez recevoir un nombre légèrement supérieur à celui commandé.",
+                    "Vous pourriez constater une baisse naturelle de certains abonnés au fil du temps."
+                ],
+                catLikes: "J'aime TikTok",
+                catFollowers: "Abonnés TikTok",
+                catViews: "Vues Vidéo TikTok",
+                catShares: "Partages TikTok",
+                orderBtn: "Commander"
+            },
+            ar: {
+                backText: "العودة للرئيسية →",
+                mainTitle: "خدمات تيك توك",
+                termsTitle: "⚠️ الشروط والأحكام الهامة",
+                termsList: [
+                    "لا يمكن استرجاع الأموال بعد إرسال الخدمة نظراً لأنه لا يمكننا إزالتها.",
+                    "تحتاج الخدمات لبعض الوقت للوصول، والكميات الكبيرة تتطلب وقتاً أطول.",
+                    "في بعض الأحيان قد تحصل على عدد أكبر بقليل من العدد الذي طلبته.",
+                    "قد تفقد بعض المتابعين بشكل طبيعي مع مرور الوقت."
+                ],
+                catLikes: "إعجابات تيك توك",
+                catFollowers: "متابعي تيك توك",
+                catViews: "مشاهدات فيديو تيك توك",
+                catShares: "مشاركات تيك توك",
+                orderBtn: "اطلب الآن"
+            }
+        };
+
+        function changeLanguage() {
+            const lang = document.getElementById('langSelect').value;
+            const t = translations[lang];
+
+            document.getElementById('htmlTag').setAttribute('lang', lang);
+            document.getElementById('htmlTag').setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+            document.getElementById('backText').innerText = t.backText;
+            document.getElementById('mainTitle').innerText = t.mainTitle;
+            document.getElementById('termsTitle').innerText = t.termsTitle;
+            document.getElementById('catLikes').innerText = t.catLikes;
+            document.getElementById('catFollowers').innerText = t.catFollowers;
+            document.getElementById('catViews').innerText = t.catViews;
+            document.getElementById('catShares').innerText = t.catShares;
+
+            const ul = document.getElementById('termsList');
+            ul.innerHTML = '';
+            t.termsList.forEach(text => {
+                const li = document.createElement('li');
+                li.innerText = text;
+                ul.appendChild(li);
+            });
+
+            document.querySelectorAll('.order-btn').forEach(btn => {
+                btn.innerText = t.orderBtn;
+            });
+
+            localStorage.setItem('selectedLang', lang);
+        }
+
+        window.onload = function() {
+            const savedLang = localStorage.getItem('selectedLang') || 'en';
+            document.getElementById('langSelect').value = savedLang;
+            changeLanguage();
+        };
+
+        function orderService(serviceName, price) {
+            let instagramUsername = "";
+            let message = `Hello, I want to order ${serviceName} for ${price}.`;
+            let url = `https://ig.me/m/${instagramUsername}?text=` + encodeURIComponent(message);
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlTag" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Services - Boostify</title>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto 20px auto;
+        }
+
+        .back-link a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .lang-switcher select {
+            background-color: #161b22;
+            color: #ffffff;
+            border: 1px solid #30363d;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .lang-switcher select:hover {
+            border-color: #f472b6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #f472b6;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+
+        .terms-box {
+            background-color: #161b22;
+            border: 1px solid #f472b6;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .terms-box h3 {
+            color: #f472b6;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .terms-box ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #c9d1d9;
+        }
+
+        body[dir="rtl"] .terms-box ul {
+            padding-left: 0;
+            padding-right: 20px;
+        }
+
+        .terms-box li {
+            margin-bottom: 10px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        h2.category-title {
+            text-align: center;
+            color: #38bdf8;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-bottom: 2px solid #38bdf8;
+            display: table;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 5px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+        }
+
+        @media (max-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #f472b6;
+        }
+
+        .service-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .service-price {
+            font-size: 16px;
+            color: #38bdf8;
+            margin-bottom: 20px;
+        }
+
+        .order-btn {
+            background: linear-gradient(135deg, #ec4899, #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 0;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .order-btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="back-link">
+            <a href="index.html" id="backText">← Back to Home</a>
+        </div>
+        <div class="lang-switcher">
+            <select id="langSelect" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </div>
+
+    <h1 id="mainTitle">Facebook Services</h1>
+
+    <!-- Terms & Conditions -->
+    <div class="terms-box">
+        <h3 id="termsTitle">⚠️ Important Terms & Conditions</h3>
+        <ul id="termsList">
+            <li>No refunds can be issued after services are sent, as they cannot be removed.</li>
+            <li>Services take some time to be delivered, and larger quantities require more time.</li>
+            <li>Sometimes you may receive a slightly higher number than what you ordered.</li>
+            <li>You might experience a natural drop in some interactions over time.</li>
+        </ul>
+    </div>
+
+    <!-- 1. Post Likes -->
+    <h2 class="category-title" id="catPostLikes">Facebook Post Likes</h2>
+    <div class="grid">
+        <div class="card"><div class="service-name">100 Likes</div><div class="service-price">1 DT</div><button class="order-btn" onclick="orderService('Facebook 100 Post Likes', '1 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">250 Likes</div><div class="service-price">3 DT</div><button class="order-btn" onclick="orderService('Facebook 250 Post Likes', '3 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">500 Likes</div><div class="service-price">5 DT</div><button class="order-btn" onclick="orderService('Facebook 500 Post Likes', '5 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">1000 Likes</div><div class="service-price">10 DT</div><button class="order-btn" onclick="orderService('Facebook 1000 Post Likes', '10 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">2500 Likes</div><div class="service-price">25 DT</div><button class="order-btn" onclick="orderService('Facebook 2500 Post Likes', '25 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">5000 Likes</div><div class="service-price">50 DT</div><button class="order-btn" onclick="orderService('Facebook 5000 Post Likes', '50 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">10000 Likes</div><div class="service-price">100 DT</div><button class="order-btn" onclick="orderService('Facebook 10000 Post Likes', '100 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">20000 Likes</div><div class="service-price">200 DT</div><button class="order-btn" onclick="orderService('Facebook 20000 Post Likes', '200 DT')">Order Now</button></div>
+    </div>
+
+    <!-- 2. Page Likes -->
+    <h2 class="category-title" id="catPageLikes">Facebook Page Likes</h2>
+    <div class="grid">
+        <div class="card"><div class="service-name">100 Likes</div><div class="service-price">2 DT</div><button class="order-btn" onclick="orderService('Facebook 100 Page Likes', '2 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">250 Likes</div><div class="service-price">5 DT</div><button class="order-btn" onclick="orderService('Facebook 250 Page Likes', '5 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">500 Likes</div><div class="service-price">10 DT</div><button class="order-btn" onclick="orderService('Facebook 500 Page Likes', '10 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">1000 Likes</div><div class="service-price">20 DT</div><button class="order-btn" onclick="orderService('Facebook 1000 Page Likes', '20 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">2500 Likes</div><div class="service-price">50 DT</div><button class="order-btn" onclick="orderService('Facebook 2500 Page Likes', '50 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">5000 Likes</div><div class="service-price">100 DT</div><button class="order-btn" onclick="orderService('Facebook 5000 Page Likes', '100 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">10000 Likes</div><div class="service-price">200 DT</div><button class="order-btn" onclick="orderService('Facebook 10000 Page Likes', '200 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">20000 Likes</div><div class="service-price">400 DT</div><button class="order-btn" onclick="orderService('Facebook 20000 Page Likes', '400 DT')">Order Now</button></div>
+    </div>
+
+    <!-- 3. Story Views -->
+    <h2 class="category-title" id="catStoryViews">Facebook Story Views</h2>
+    <div class="grid">
+        <div class="card"><div class="service-name">100 Views</div><div class="service-price">1 DT</div><button class="order-btn" onclick="orderService('Facebook 100 Story Views', '1 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">250 Views</div><div class="service-price">3 DT</div><button class="order-btn" onclick="orderService('Facebook 250 Story Views', '3 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">500 Views</div><div class="service-price">5 DT</div><button class="order-btn" onclick="orderService('Facebook 500 Story Views', '5 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">1000 Views</div><div class="service-price">10 DT</div><button class="order-btn" onclick="orderService('Facebook 1000 Story Views', '10 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">2500 Views</div><div class="service-price">20 DT</div><button class="order-btn" onclick="orderService('Facebook 2500 Story Views', '20 DT')">Order Now</button></div>
+    </div>
+
+    <!-- 4. Live Viewers -->
+    <h2 class="category-title" id="catLiveViewers">Facebook Live Viewers</h2>
+    <div class="grid">
+        <div class="card"><div class="service-name">50 Viewers</div><div class="service-price">2 DT</div><button class="order-btn" onclick="orderService('Facebook 50 Live Viewers', '2 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">100 Viewers</div><div class="service-price">3 DT</div><button class="order-btn" onclick="orderService('Facebook 100 Live Viewers', '3 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">200 Viewers</div><div class="service-price">7 DT</div><button class="order-btn" onclick="orderService('Facebook 200 Live Viewers', '7 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">300 Viewers</div><div class="service-price">10 DT</div><button class="order-btn" onclick="orderService('Facebook 300 Live Viewers', '10 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">500 Viewers</div><div class="service-price">17 DT</div><button class="order-btn" onclick="orderService('Facebook 500 Live Viewers', '17 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">750 Viewers</div><div class="service-price">25 DT</div><button class="order-btn" onclick="orderService('Facebook 750 Live Viewers', '25 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">1000 Viewers</div><div class="service-price">33 DT</div><button class="order-btn" onclick="orderService('Facebook 1000 Live Viewers', '33 DT')">Order Now</button></div>
+        <div class="card"><div class="service-name">1250 Viewers</div><div class="service-price">42 DT</div><button class="order-btn" onclick="orderService('Facebook 1250 Live Viewers', '42 DT')">Order Now</button></div>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                backText: "← Back to Home",
+                mainTitle: "Facebook Services",
+                termsTitle: "⚠️ Important Terms & Conditions",
+                termsList: [
+                    "No refunds can be issued after services are sent, as they cannot be removed.",
+                    "Services take some time to be delivered, and larger quantities require more time.",
+                    "Sometimes you may receive a slightly higher number than what you ordered.",
+                    "You might experience a natural drop in some interactions over time."
+                ],
+                catPostLikes: "Facebook Post Likes",
+                catPageLikes: "Facebook Page Likes",
+                catStoryViews: "Facebook Story Views",
+                catLiveViewers: "Facebook Live Viewers",
+                orderBtn: "Order Now"
+            },
+            fr: {
+                backText: "← Retour à l'accueil",
+                mainTitle: "Services Facebook",
+                termsTitle: "⚠️ Termes et Conditions Importants",
+                termsList: [
+                    "Aucun remboursement ne peut être effectué après l'envoi, car ils ne peuvent pas être retirés.",
+                    "Les services prennent un certain temps à être livrés, et les grandes quantités demandent plus de temps.",
+                    "Parfois, vous pouvez recevoir un nombre légèrement supérieur à celui commandé.",
+                    "Vous pourriez constater une baisse naturelle de certaines interactions au fil du temps."
+                ],
+                catPostLikes: "J'aime Publications Facebook",
+                catPageLikes: "J'aime Page Facebook",
+                catStoryViews: "Vues Story Facebook",
+                catLiveViewers: "Spectateurs Live Facebook",
+                orderBtn: "Commander"
+            },
+            ar: {
+                backText: "العودة للرئيسية →",
+                mainTitle: "خدمات فيسبوك",
+                termsTitle: "⚠️ الشروط والأحكام الهامة",
+                termsList: [
+                    "لا يمكن استرجاع الأموال بعد إرسال الخدمة نظراً لأنه لا يمكننا إزالتها.",
+                    "تحتاج الخدمات لبعض الوقت للوصول، والكميات الكبيرة تتطلب وقتاً أطول.",
+                    "في بعض الأحيان قد تحصل على عدد أكبر بقليل من العدد الذي طلبته.",
+                    "قد تفقد بعض التفاعلات بشكل طبيعي مع مرور الوقت."
+                ],
+                catPostLikes: "إعجابات منشورات فيسبوك",
+                catPageLikes: "إعجابات صفحة فيسبوك",
+                catStoryViews: "مشاهدات ستوري فيسبوك",
+                catLiveViewers: "مشاهدو البث المباشر فيسبوك",
+                orderBtn: "اطلب الآن"
+            }
+        };
+
+        function changeLanguage() {
+            const lang = document.getElementById('langSelect').value;
+            const t = translations[lang];
+
+            document.getElementById('htmlTag').setAttribute('lang', lang);
+            document.getElementById('htmlTag').setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+            document.getElementById('backText').innerText = t.backText;
+            document.getElementById('mainTitle').innerText = t.mainTitle;
+            document.getElementById('termsTitle').innerText = t.termsTitle;
+            document.getElementById('catPostLikes').innerText = t.catPostLikes;
+            document.getElementById('catPageLikes').innerText = t.catPageLikes;
+            document.getElementById('catStoryViews').innerText = t.catStoryViews;
+            document.getElementById('catLiveViewers').innerText = t.catLiveViewers;
+
+            const ul = document.getElementById('termsList');
+            ul.innerHTML = '';
+            t.termsList.forEach(text => {
+                const li = document.createElement('li');
+                li.innerText = text;
+                ul.appendChild(li);
+            });
+
+            document.querySelectorAll('.order-btn').forEach(btn => {
+                btn.innerText = t.orderBtn;
+            });
+
+            localStorage.setItem('selectedLang', lang);
+        }
+
+        window.onload = function() {
+            const savedLang = localStorage.getItem('selectedLang') || 'en';
+            document.getElementById('langSelect').value = savedLang;
+            changeLanguage();
+        };
+
+        function orderService(serviceName, price) {
+            let instagramUsername = "";
+            let message = `Hello, I want to order ${serviceName} for ${price}.`;
+            let url = `https://ig.me/m/${instagramUsername}?text=` + encodeURIComponent(message);
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
