@@ -11,6 +11,7 @@
         .logo-box { width: 120px; height: 120px; margin: 0 auto 15px auto; background: #1e293b; border-radius: 50%; border: 2px solid #334155; overflow: hidden; }
         .logo { width: 100%; height: 100%; object-fit: cover; }
         h1 { font-size: 1.5rem; margin-bottom: 25px; }
+        h2 { font-size: 1.3rem; margin-top: 40px; margin-bottom: 20px; color: #ec4899; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; max-width: 800px; margin: auto; }
         .card { background: #1e293b; padding: 20px; border-radius: 15px; border: 1px solid #334155; transition: 0.3s; }
         .card:hover { border-color: #ec4899; }
@@ -18,8 +19,17 @@
         .card h3 { margin: 10px 0; font-size: 1.2rem; }
         .btn { background: #ec4899; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; display: block; margin-top: 15px; font-weight: 600; }
 
+        /* Feedback Section Styles */
+        .feedback-grid { display: grid; grid-template-columns: 1fr; gap: 15px; max-width: 800px; margin: auto; }
+        .feedback-card { background: #1e293b; padding: 20px; border-radius: 15px; border: 1px solid #334155; text-align: left; }
+        .feedback-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .feedback-user { font-weight: bold; font-size: 1rem; color: #fff; }
+        .stars { color: #f59e0b; font-size: 0.9rem; }
+        .feedback-text { font-size: 0.95rem; color: #94a3b8; margin: 0; line-height: 1.4; }
+
         @media (min-width: 600px) {
             .grid { grid-template-columns: repeat(2, 1fr); }
+            .feedback-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (min-width: 900px) {
             .grid { grid-template-columns: repeat(3, 1fr); }
@@ -31,12 +41,31 @@
 <body>
     <div class="logo-box"><img src="circle.png" class="logo"></div>
     <h1>Boostify Marketplace</h1>
+
     <div class="grid">
         <div class="card"><i class="fab fa-instagram"></i><h3>Instagram</h3><a href="instagram.html" class="btn">View Packages</a></div>
         <div class="card"><i class="fab fa-tiktok"></i><h3>TikTok</h3><a href="tiktok.html" class="btn">View Packages</a></div>
         <div class="card"><i class="fab fa-facebook"></i><h3>Facebook</h3><a href="facebook.html" class="btn">View Packages</a></div>
         <div class="card"><i class="fab fa-reddit"></i><h3>Reddit</h3><a href="reddit.html" class="btn">View Packages</a></div>
         <div class="card"><i class="fab fa-twitter"></i><h3>Twitter</h3><a href="twitter.html" class="btn">View Packages</a></div>
+    </div>
+
+    <h2>Customer Feedbacks</h2>
+    <div class="feedback-grid">
+        <div class="feedback-card">
+            <div class="feedback-header">
+                <span class="feedback-user">Hassen</span>
+                <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+            </div>
+            <p class="feedback-text">"Ya3tikoum sa7a walah! likes w followers weslou lkoul."</p>
+        </div>
+        <div class="feedback-card">
+            <div class="feedback-header">
+                <span class="feedback-user">Sara</span>
+                <span class="stars"><i class="far fa-star"></i><i class="far fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+            </div>
+            <p class="feedback-text">"mo3amla behya mais followers tawlou chwaya bch weslou"</p>
+        </div>
     </div>
 </body>
 </html>
