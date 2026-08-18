@@ -315,8 +315,9 @@
         };
 
         function orderService(serviceName, price) {
-            let tiktokUsername = "boostify27"; // Replace with your TikTok username
-            let url = `https://www.tiktok.com/@${tiktokUsername}`;
+            let instagramUsername = "boostify7_"; // Your Instagram username
+            let message = `Hello, I want to order ${serviceName} for ${price}.`;
+            let url = `https://ig.me/m/${instagramUsername}?text=` + encodeURIComponent(message);
             window.open(url, '_blank');
         }
     </script>
