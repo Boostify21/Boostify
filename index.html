@@ -3,70 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boostify Marketplace</title>
+    <title>Boostify Marketplace - Hub</title>
     <link rel="icon" type="image/png" href="circle.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #fff; text-align: center; margin: 0; padding: 20px; }
+        body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #fff; text-align: center; margin: 0; padding: 20px; display: flex; flex-direction: column; justify-content: center; min-height: 100vh; }
         .logo-box { width: 120px; height: 120px; margin: 0 auto 15px auto; background: #1e293b; border-radius: 50%; border: 2px solid #334155; overflow: hidden; }
         .logo { width: 100%; height: 100%; object-fit: cover; }
-        h1 { font-size: 1.5rem; margin-bottom: 25px; }
-        h2 { font-size: 1.3rem; margin-top: 40px; margin-bottom: 20px; color: #ec4899; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; max-width: 800px; margin: auto; }
-        .card { background: #1e293b; padding: 20px; border-radius: 15px; border: 1px solid #334155; transition: 0.3s; }
-        .card:hover { border-color: #ec4899; }
-        .card i { font-size: 2.5rem; color: #ec4899; margin-bottom: 10px; }
-        .card h3 { margin: 10px 0; font-size: 1.2rem; }
-        .btn { background: #ec4899; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; display: block; margin-top: 15px; font-weight: 600; }
-
-        /* Feedback Section Styles */
-        .feedback-grid { display: grid; grid-template-columns: 1fr; gap: 15px; max-width: 800px; margin: auto; }
-        .feedback-card { background: #1e293b; padding: 20px; border-radius: 15px; border: 1px solid #334155; text-align: left; }
-        .feedback-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-        .feedback-user { font-weight: bold; font-size: 1rem; color: #fff; }
-        .stars { color: #f59e0b; font-size: 0.9rem; }
-        .feedback-text { font-size: 0.95rem; color: #94a3b8; margin: 0; line-height: 1.4; }
-
-        @media (min-width: 600px) {
-            .grid { grid-template-columns: repeat(2, 1fr); }
-            .feedback-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (min-width: 900px) {
-            .grid { grid-template-columns: repeat(3, 1fr); }
-            h1 { font-size: 2rem; }
-            .logo-box { width: 150px; height: 150px; }
-        }
+        h1 { font-size: 2rem; margin-bottom: 5px; }
+        p { color: #94a3b8; margin-bottom: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 950px; margin: auto; width: 100%; }
+        .card { background: #1e293b; padding: 35px 20px; border-radius: 16px; border: 1px solid #334155; transition: 0.3s; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; }
+        .card:hover { border-color: #ec4899; transform: translateY(-5px); background: #223049; }
+        .card i { font-size: 3rem; color: #ec4899; margin-bottom: 15px; }
+        .card h3 { margin: 0 0 10px 0; font-size: 1.25rem; }
+        .card p { font-size: 0.85rem; color: #64748b; margin: 0; }
     </style>
 </head>
 <body>
-    <div class="logo-box"><img src="circle.png" class="logo"></div>
+    <div class="logo-box"><img src="circle.png" class="logo" alt="Logo"></div>
     <h1>Boostify Marketplace</h1>
+    <p>Select a main department to view available services.</p>
 
     <div class="grid">
-        <div class="card"><i class="fab fa-instagram"></i><h3>Instagram</h3><a href="instagram.html" class="btn">View Packages</a></div>
-        <div class="card"><i class="fab fa-tiktok"></i><h3>TikTok</h3><a href="tiktok.html" class="btn">View Packages</a></div>
-        <div class="card"><i class="fab fa-facebook"></i><h3>Facebook</h3><a href="facebook.html" class="btn">View Packages</a></div>
-        <div class="card"><i class="fab fa-reddit"></i><h3>Reddit</h3><a href="reddit.html" class="btn">View Packages</a></div>
-        <div class="card"><i class="fab fa-twitter"></i><h3>Twitter</h3><a href="twitter.html" class="btn">View Packages</a></div>
-    </div>
-
-    <h2>Customer Feedbacks</h2>
-    <div class="feedback-grid">
-        <div class="feedback-card">
-            <div class="feedback-header">
-                <span class="feedback-user">Hassen</span>
-                <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-            </div>
-            <p class="feedback-text">"Ya3tikoum sa7a walah! likes w followers weslou lkoul."</p>
-        </div>
-        <div class="feedback-card">
-            <div class="feedback-header">
-                <span class="feedback-user">Sara</span>
-                <span class="stars"><i class="far fa-star"></i><i class="far fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-            </div>
-            <p class="feedback-text">"mo3amla behya mais followers tawlou chwaya bch weslou"</p>
-        </div>
+        <a href="social-hub.html" class="card">
+            <i class="fas fa-share-alt"></i>
+            <h3>Social & Growth</h3>
+            <p>Engagement, accounts, packs & ads sponsoring</p>
+        </a>
+        <a href="gaming-hub.html" class="card">
+            <i class="fas fa-gamepad"></i>
+            <h3>Gaming & Currencies</h3>
+            <p>In-game money & Steam offline accounts</p>
+        </a>
+        <a href="digital-hub.html" class="card">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Digital & Services</h3>
+            <p>Subscriptions, AI, Windows, gift cards & web creation</p>
+        </a>
     </div>
 </body>
 </html>
