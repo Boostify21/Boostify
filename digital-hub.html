@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital & Services - Boostify</title>
+    <link rel="icon" type="image/png" href="circle.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #fff; text-align: center; margin: 0; padding: 20px; }
+        .back-link { display: inline-block; text-align: left; max-width: 900px; width: 100%; margin: 0 auto 15px auto; color: #94a3b8; text-decoration: none; font-size: 0.9rem; }
+        .back-link:hover { color: #ec4899; }
+        .logo-box { width: 90px; height: 90px; margin: 0 auto 10px auto; background: #1e293b; border-radius: 50%; border: 2px solid #334155; overflow: hidden; }
+        .logo { width: 100%; height: 100%; object-fit: cover; }
+        h1 { font-size: 1.5rem; margin-bottom: 25px; color: #ec4899; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; max-width: 900px; margin: auto; }
+        .card { background: #1e293b; padding: 16px 20px; border-radius: 12px; border: 1px solid #334155; transition: 0.3s; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: #fff; }
+        .card:hover { border-color: #ec4899; background: #223049; transform: translateY(-2px); }
+        .card-left { display: flex; align-items: center; gap: 14px; text-align: left; }
+        .card i { font-size: 1.4rem; color: #ec4899; min-width: 25px; text-align: center; }
+        .card h3 { margin: 0; font-size: 0.95rem; font-weight: 500; }
+        .card span { font-size: 0.8rem; color: #38bdf8; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div style="max-width: 900px; margin: auto;">
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </div>
+    
+    <div class="logo-box"><img src="circle.png" class="logo" alt="Logo"></div>
+    <h1>Digital & Services</h1>
+
+    <div class="grid">
+        <a href="subscriptions.html" class="card">
+            <div class="card-left"><i class="fas fa-tv"></i><h3>Streaming Subscriptions</h3></div>
+            <span>View</span>
+        </a>
+        <a href="ai-premium.html" class="card">
+            <div class="card-left"><i class="fas fa-robot"></i><h3>AI Premium Tools</h3></div>
+            <span>View</span>
+        </a>
+        <a href="microsoft-services.html" class="card">
+            <div class="card-left"><i class="fab fa-windows"></i><h3>Microsoft Solutions</h3></div>
+            <span>View</span>
+        </a>
+        <a href="gift-cards.html" class="card">
+            <div class="card-left"><i class="fas fa-gift"></i><h3>Gift Cards</h3></div>
+            <span>View</span>
+        </a>
+        <a href="web-creation.html" class="card">
+            <div class="card-left"><i class="fas fa-code"></i><h3>Web Creation Services</h3></div>
+            <span>View</span>
+        </a>
+    </div>
+</body>
+</html>

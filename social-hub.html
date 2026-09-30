@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boostify Hub</title>
+    <link rel="icon" type="image/png" href="circle.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #fff; text-align: center; margin: 0; padding: 20px; }
+        
+        /* Back to Home Link Style */
+        .back-link { display: inline-block; text-align: left; max-width: 900px; width: 100%; margin: 0 auto 15px auto; color: #94a3b8; text-decoration: none; font-size: 0.9rem; }
+        .back-link:hover { color: #ec4899; }
+
+        .logo-box { width: 90px; height: 90px; margin: 0 auto 10px auto; background: #1e293b; border-radius: 50%; border: 2px solid #334155; overflow: hidden; }
+        .logo { width: 100%; height: 100%; object-fit: cover; }
+        h1 { font-size: 1.5rem; margin-bottom: 25px; color: #ec4899; }
+
+        /* Main Toggle Trigger & Hub Cards */
+        .toggle-card, .hub-card { 
+            background: #1e293b; 
+            padding: 18px 24px; 
+            border-radius: 12px; 
+            border: 1px solid #334155; 
+            max-width: 900px; 
+            margin: 0 auto 15px auto; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            cursor: pointer; 
+            transition: 0.3s; 
+            color: #fff; 
+            text-decoration: none;
+        }
+        .toggle-card:hover, .hub-card:hover { border-color: #ec4899; background: #223049; }
+        
+        .card-left { display: flex; align-items: center; gap: 14px; text-align: left; }
+        .card-left i { font-size: 1.4rem; color: #ec4899; min-width: 25px; text-align: center; }
+        .card-left h3 { margin: 0; font-size: 1rem; font-weight: 500; }
+        
+        .chevron { transition: transform 0.3s ease; color: #94a3b8; }
+        .toggle-card.active .chevron { transform: rotate(180deg); color: #ec4899; }
+        .card-action { font-size: 0.8rem; color: #38bdf8; font-weight: 600; }
+
+        /* Smooth Expandable Section */
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+            opacity: 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .expandable-content.show {
+            max-height: 1000px;
+            opacity: 1;
+            margin-bottom: 20px;
+        }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+        .grid .hub-card { margin: 0; }
+        
+        .badge-soon { background: #334155; color: #94a3b8; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+    </style>
+</head>
+<body>
+    
+    <!-- Back to Home Link -->
+    <div style="max-width: 900px; margin: auto;">
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </div>
+
+    <div class="logo-box"><img src="circle.png" class="logo" alt="Logo"></div>
+    <h1>Boostify Hub</h1>
+
+    <!-- 1. Social Media Engagement Accordion -->
+    <div class="toggle-card" onclick="toggleDropdown('engagementList', this)">
+        <div class="card-left">
+            <i class="fas fa-layer-group"></i>
+            <h3>Social Media Engagement</h3>
+        </div>
+        <i class="fas fa-chevron-down chevron"></i>
+    </div>
+
+    <div class="expandable-content" id="engagementList">
+        <div class="grid">
+            <a href="instagram.html" class="hub-card">
+                <div class="card-left"><i class="fab fa-instagram"></i><h3>Instagram Services</h3></div>
+                <span class="card-action">View</span>
+            </a>
+            <a href="tiktok.html" class="hub-card">
+                <div class="card-left"><i class="fab fa-tiktok"></i><h3>TikTok Services</h3></div>
+                <span class="card-action">View</span>
+            </a>
+            <a href="facebook.html" class="hub-card">
+                <div class="card-left"><i class="fab fa-facebook"></i><h3>Facebook Services</h3></div>
+                <span class="card-action">View</span>
+            </a>
+            <a href="reddit.html" class="hub-card">
+                <div class="card-left"><i class="fab fa-reddit"></i><h3>Reddit Services</h3></div>
+                <span class="card-action">View</span>
+            </a>
+            <a href="twitter.html" class="hub-card">
+                <div class="card-left"><i class="fab fa-twitter"></i><h3>Twitter Services</h3></div>
+                <span class="card-action">View</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 2. Account Services Accordion -->
+    <div class="toggle-card" onclick="toggleDropdown('accountList', this)">
+        <div class="card-left">
+            <i class="fas fa-user-shield"></i>
+            <h3>Account Services</h3>
+        </div>
+        <i class="fas fa-chevron-down chevron"></i>
+    </div>
+
+    <div class="expandable-content" id="accountList">
+        <div class="grid">
+            <a href="account-tiktok.html" class="hub-card">
+                <div class="card-left"><i class="fab fa-tiktok"></i><h3>TikTok Accounts</h3></div>
+                <span class="card-action">View</span>
+            </a>
+            <a href="account-instagram.html" class="hub-card">
+                <div class="card-left"><i class="fab fa-instagram"></i><h3>Instagram Accounts</h3></div>
+                <span class="card-action">View</span>
+            </a>
+            <a href="account-facebook.html" class="hub-card">
+                <div class="card-left"><i class="fab fa-facebook"></i><h3>Facebook Accounts</h3></div>
+                <span class="card-action">View</span>
+            </a>
+            <a href="account-youtube.html" class="hub-card">
+                <div class="card-left"><i class="fab fa-youtube"></i><h3>YouTube Accounts</h3></div>
+                <span class="card-action">View</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 3. Sponsoring Accordion -->
+    <div class="toggle-card" onclick="toggleDropdown('sponsoringList', this)">
+        <div class="card-left">
+            <i class="fas fa-bullhorn"></i>
+            <h3>Sponsoring</h3>
+        </div>
+        <i class="fas fa-chevron-down chevron"></i>
+    </div>
+
+    <div class="expandable-content" id="sponsoringList">
+        <div class="grid">
+            <a href="sponsoring-tiktok.html" class="hub-card">
+                <div class="card-left"><i class="fab fa-tiktok"></i><h3>TikTok Sponsoring</h3></div>
+                <span class="card-action">View</span>
+            </a>
+            <a href="sponsoring-instagram.html" class="hub-card">
+                <div class="card-left"><i class="fab fa-instagram"></i><h3>Instagram Sponsoring</h3></div>
+                <span class="card-action">View</span>
+            </a>
+            <a href="sponsoring-facebook.html" class="hub-card">
+                <div class="card-left"><i class="fab fa-facebook"></i><h3>Facebook Sponsoring</h3></div>
+                <span class="card-action">View</span>
+            </a>
+            <a href="sponsoring-youtube.html" class="hub-card">
+                <div class="card-left"><i class="fab fa-youtube"></i><h3>YouTube Sponsoring</h3></div>
+                <span class="card-action">View</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 4. Packs (Soon) -->
+    <div class="hub-card" style="cursor: default; opacity: 0.8;">
+        <div class="card-left">
+            <i class="fas fa-box-open"></i>
+            <h3>Packs</h3>
+        </div>
+        <span class="badge-soon">Soon</span>
+    </div>
+
+    <script>
+        function toggleDropdown(contentId, element) {
+            element.classList.toggle('active');
+            const content = document.getElementById(contentId);
+            content.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
